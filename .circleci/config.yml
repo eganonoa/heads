@@ -199,7 +199,7 @@ workflows:
           requires:
             - prep_env
 
-      # Coreboot 4.13
+      # Coreboot 4.14
       - build_and_persist:
           name: x230-hotp-maximized
           target: x230-hotp-maximized
@@ -242,6 +242,34 @@ workflows:
       - build:
           name: t520-maximized
           target: t520-maximized
+          subcommand: ""
+          requires:
+            - x230-hotp-maximized
+
+      - build:
+          name: w520-dgpu-1000m-hotp-maximized
+          target: w520-dgpu-1000m-hotp-maximized
+          subcommand: ""
+          requires:
+            - x230-hotp-maximized
+
+      - build:
+          name: w520-dgpu-2000m-hotp-maximized
+          target: w520-dgpu-2000m-hotp-maximized
+          subcommand: ""
+          requires:
+            - x230-hotp-maximized
+
+      - build:
+          name: w520-dgpu-1000m-maximized
+          target: w520-dgpu-1000m-maximized
+          subcommand: ""
+          requires:
+            - x230-hotp-maximized
+
+      - build:
+          name: w520-dgpu-2000m-maximized
+          target: w520-dgpu-2000m-maximized
           subcommand: ""
           requires:
             - x230-hotp-maximized
